@@ -1,0 +1,112 @@
+
+//Header
+header{
+    overflow:hidden;
+    #nav-bar{
+        width:100%;
+        z-index: 1000;
+        background: @white;
+        &.go-show{
+            animation: slideInDown 500ms forwards;
+        }
+
+        &.go-hide{
+            .affix;
+            animation: slideOutUp 500ms forwards;
+
+        }
+    }
+
+    .video-bg{
+        height: 100vh;
+        position: relative;
+        overflow:hidden;
+        img{
+            height:100%!important;
+
+        }
+    }
+    &:before{
+        z-index: 50; 
+    }
+    #caption{
+        opacity:0;
+        animation:showInit 2s 500ms @ease1 forwards;
+        display: table;
+
+
+        z-index: 100;
+        h1,h2,h3{
+            color:@white;
+        }
+        .absolute-center;
+
+
+        &,&.center{
+
+
+            width: 45%;
+
+        }
+        &.left{
+
+            left:5%;
+            right:auto;
+        }
+        &.right{
+
+            left:auto;
+            right:5%;
+        }
+
+        .social-icons{
+            >li >a {
+                color:@white;
+                &:hover{
+                    color:@color1;
+                }
+            }
+        }
+    }
+}
+
+
+//header Slider
+#header-slider{
+    &,.carousel,.flickity-viewport,.carousel-cell{
+        height:100vh!important;    
+    }
+    button{
+        display: none;
+    }
+    .carousel-cell {
+        width: 100%; /* full width */
+
+    }  
+}
+
+
+#scroll-indicator{
+    &:hover{
+        cursor: pointer;
+    }
+    .center-absolute;
+    .bounce;
+    bottom:10%;
+    top: auto;
+    z-index:100;
+    width:45px;
+    height:45px;
+    .icon{
+        width:45px;
+        height:45px;
+        color:@white;
+    }
+    .svg-icon{
+        width:45px;
+        height:45px;
+        path{
+            fill:@white;
+        }
+    }
+}

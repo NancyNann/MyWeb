@@ -1,0 +1,379 @@
+/*Responsive layout*/
+#wpadminbar {
+    z-index: 500!important;
+    top:0;
+}
+
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+// Note: Deprecated @screen-xs and @screen-phone as of v3.0.1
+@screen-xs:                  480px;
+@screen-xs-min:              @screen-xs;
+@screen-phone:               @screen-xs-min;
+
+// Small screen / tablet
+// Note: Deprecated @screen-sm and @screen-tablet as of v3.0.1
+@screen-sm:                  768px;
+@screen-sm-min:              @screen-sm;
+@screen-tablet:              @screen-sm-min;
+
+// Medium screen / desktop
+// Note: Deprecated @screen-md and @screen-desktop as of v3.0.1
+@screen-md:                  992px;
+@screen-md-min:              @screen-md;
+@screen-desktop:             @screen-md-min;
+
+// Large screen / wide desktop
+// Note: Deprecated @screen-lg and @screen-lg-desktop as of v3.0.1
+@screen-lg:                  1200px;
+@screen-lg-min:              @screen-lg;
+@screen-lg-desktop:          @screen-lg-min;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:              (@screen-sm-min - 1);
+@screen-sm-max:              (@screen-md-min - 1);
+@screen-md-max:              (@screen-lg-min - 1);
+
+
+
+
+@media  (min-width:1300px){
+
+
+
+}
+@media  (min-width:@screen-lg-min){
+
+
+}
+
+@media all and (max-width:@screen-lg-min){
+
+}
+
+
+
+/*screen-md-max*/
+@media  (max-width:@screen-md-max){
+
+    .effect-dexter figcaption:after{
+        height: 35%;
+        transform: translate3d(0, -128%, 0);
+    }
+    .navbar-nav>li>a{
+        padding: 30px 10px;
+    }
+
+    .blog-item .body *{
+        line-height: 1.2;
+    }
+}
+
+
+
+
+/* screen-sm-max 991 */ 
+@media all and (max-width:@screen-sm-max){
+    #portfolio-filterable{
+        .portfolio-item{
+            &,&.width2{
+                width:45%;
+
+            }
+
+        }
+    }
+
+    .testimonial-item{
+        .le-blockquote{
+            display: inline-block;
+        }
+        .body{
+            display: block;
+
+        }
+
+        figure{
+            display:block;
+            float:left;
+            padding:0;
+            width:30%;
+            margin:0 10px 0 0;
+        }
+    }
+
+
+    figure.banner figcaption p{
+        font-size: 1em;
+        line-height: 1.5;
+    }
+    #portfolio{
+        .portfolio-item{
+            width:33.333333%;
+        }
+    }
+    #scroll-indicator {
+        bottom: 4%;
+        width: 30px;
+        height: 30px;
+        .svg-icon{
+            width: 30px;
+            height: 30px;
+        }
+
+    }
+
+
+    #nav-bar{
+        .navbar-toggle{
+            top:20px;
+        }
+    }
+
+}
+
+@media all and (max-width:@screen-sm-max) and (min-width:@screen-xs-max){
+    #nav-bar{
+        .navbar-nav{
+            float:none!important;
+        }
+        .navbar{
+            display: inline-block!important;
+            margin: auto!important;
+            float: none!important;
+            width: 100%!important;
+            text-align: center!important;
+
+        }
+        #logo {
+            float: none;
+
+            text-align: center;
+        }
+
+        .navbar-nav{
+            margin: auto;
+            display: inline-block;
+
+        }
+
+    }
+}
+/*screen-xs-max*/
+@media all and (max-width:@screen-xs-max)
+{ 
+
+    #portfolio-filterable{
+
+        #portfolio-grid {
+            width: 100%!important;
+        }
+        .portfolio-item{
+            &,&.width2{
+                width:100%;
+                min-height:auto!important;
+                img{
+                    width:100%;
+                    min-height:auto!important;
+                    height:auto!important;
+                }
+            }
+            .title{
+                font-size: 1.2em;
+                padding: 10px;
+            }
+            .excerpt p{
+                font-size: 0.8em;
+
+            }
+
+            .le-btn {
+                padding: 3px 12px;
+                font-size: 0.8em;
+            }
+            .excerpt p{
+                line-height: 1.3;
+
+            }
+        }
+    }
+
+
+    #nav-bar{
+        #logo {
+            float: left;
+
+            text-align: left;
+        }
+
+        .navbar-nav{
+            margin: 0;
+            width:100%;
+        }
+
+    }
+    .social-icons.big a{
+        font-size: 2.5em;
+    }
+    #contact-box{
+        .col-xs-12{
+            margin-bottom: 20px;
+        }
+    }
+    .social-icons.big li a{
+
+    }
+    .effect-dexter  {
+        figcaption{
+            padding: 2em;
+        }
+
+        .body{
+            right: 20px;
+            bottom: 35px;
+            left: 20px;
+        }
+    }
+    footer .social-icons{
+        li{
+            margin-bottom: 20px;
+        }
+    }
+    .le-box .square{
+        width:20px;
+        height: 20px;
+    }
+    footer{
+        .col-xs-12{
+            text-align: center;
+            margin-bottom: 50px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+    figure.banner figcaption{
+        position: relative;
+        .background-opacity(@dark,1);
+    }
+    .navbar-nav>li>a{
+        padding: 10px;
+    }
+
+    .blog-item {
+        figcaption:after{
+            display: none;
+        }
+        &.jshover{
+            h2{
+                opacity: 0.05;
+            }
+
+        }
+
+    }
+    .navbar{
+        float:none;
+    }
+    #portfolio{
+        .portfolio-item{
+            width:100%;
+        }
+    }
+
+    #testimonail-slider {
+        .carousel-cell{
+            width:100%; 
+        }   
+
+        .flickity-prev-next-button{
+            display: none;
+        }
+
+    }
+
+    .vertical-align-row{
+        .row{
+            display:block;
+            > [class^="col-"],
+            > [class*=" col-"]{
+                display:block;
+            }
+        }
+    }
+    .timeline-item{
+        .info-box{
+            margin-bottom: 2em;
+        }
+    }
+    .fact-item{
+        margin-bottom: 2em;
+        .right-cell{
+            min-width: 170px;
+            text-align: right;
+        }
+        .left-cell, .right-cell{
+            display:inline-block;
+            width:auto;
+        }
+
+        text-align: center;
+    }
+
+    .services-item{
+        text-align: center;
+        min-height: auto;
+    }
+    header #caption {
+        width: 80%;
+    }
+    #scroll-indicator{
+        display: none;
+    }
+    .le-box{
+        &.cut-up{
+            border-top: 5px solid @white;
+            padding-top: 1.8em;
+            .second-part{
+                top: -3em;
+            }
+        }
+        &.cut-down{
+            padding-top: 1.8em;
+            border-bottom: 5px solid @white;
+            .second-part{
+                bottom: -3em;
+            }
+        }
+        &.cut-up,&.cut-down{
+            &:before,&:after{display: none;}
+        }
+    }
+}
+
+
+@media screen and (max-width: 600px)
+{
+
+}
+
+@media all and  (max-width:480px){
+
+
+}
+
+
+
+@media all and (max-width: 420px){
+}
+
+
+@media all and (max-width: 300px){
+
+
+
+}

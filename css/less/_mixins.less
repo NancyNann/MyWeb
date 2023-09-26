@@ -1,0 +1,217 @@
+
+
+//LESS Mixins
+
+.border-radius(@r:4px){
+    .border-radius(@r,@r,@r,@r);
+}
+
+.gray(@per:100%){
+
+    filter:grayscale(@per);
+
+    -webkit-filter:grayscale(@per);
+
+    -moz-filter:grayscale(@per);
+
+    -o-filter:grayscale(@per);
+
+    -ms-filter:grayscale(@per);
+
+} 
+.scale (@factor) {
+    -webkit-transform: scale(@factor);
+    -moz-transform: 	 scale(@factor);
+    -ms-transform: 		 scale(@factor);
+    -o-transform: 		 scale(@factor);
+} 
+.rotate-scale(@deg,@factor){
+    -webkit-transform: rotate(@deg) scale(@factor);
+    -moz-transform: 	rotate(@deg) scale(@factor);
+    -ms-transform: 	rotate(@deg)	 scale(@factor);
+    -o-transform: 	rotate(@deg)	 scale(@factor);
+}
+.rotate (@deg) {
+    -webkit-transform: rotate(@deg);
+    -moz-transform: 	 rotate(@deg);
+    -ms-transform: 		 rotate(@deg);
+    -o-transform: 		 rotate(@deg);
+}
+
+
+.le-gradient(@origin: left, @start: #ffffff, @stop: #000000,@opacityS:1,@opacityE:1) {
+    @rgba-color-start: rgba(red(@start), green(@start), blue(@start), @opacityS);
+    @rgba-color-stop: rgba(red(@stop), green(@stop), blue(@stop), @opacityE);
+    background-color: @rgba-color-start;
+    background-image: -webkit-linear-gradient(@origin, @rgba-color-start, @rgba-color-stop);
+    background-image: linear-gradient(@origin, @rgba-color-start, @rgba-color-stop);
+    background-image: -o-linear-gradient(@origin, @rgba-color-start, @rgba-color-stop);
+    background-image: -ms-linear-gradient(@origin, @rgba-color-start, @rgba-color-stop);
+    background-image: linear-gradient(@origin, @rgba-color-start, @rgba-color-stop);
+}
+
+.background-opacity(@color, @opacity) {
+    @rgba-color: rgba(red(@color), green(@color), blue(@color), @opacity);
+
+    background-color: @rgba-color;
+
+    // Hack for IE8:
+    background: none\9; // Only IE8
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d')", argb(@rgba-color),argb(@rgba-color))); // IE9 and down
+    // Problem: Filter gets applied twice in IE9.
+    // Solution:
+    &:not([dummy]) {
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled='false'); // Only IE9
+    }
+}
+
+
+
+
+
+.button-maker(@color,@hoverColor:@black){
+
+    &.fill{
+        background-color: @color;
+        color:@hoverColor;
+        border-color: @color;
+        &:hover,&:focus{
+            background-color: darken(@color,5%)!important;
+            border-color: darken(@color,5%)!important;
+            color:@hoverColor;
+
+        }  
+    }
+
+    background-color: transparent;
+    color:@color;
+    border-color: @color;
+
+    &:hover,&:focus{
+        background-color: @color!important;
+        color:@hoverColor;
+
+    }  
+
+
+}
+
+@-moz-document url-prefix() {
+    fieldset { display: table-cell; }
+}
+
+
+// Define Style Margin - Padding
+.marginAndPadding(@iterations)
+{
+    .p0 {padding: 0px;}
+    .pT0{padding-top: 0px;}
+    .pR0{padding-right: 0px;}
+    .pB0{padding-bottom: 0px;}
+    .pL0{padding-left: 0px;}
+
+    .m0 {margin: 0px;}
+    .mT0{margin-top: 0px;}
+    .mR0{margin-right: 0px;}
+    .mB0{margin-bottom: 0px;}
+    .mL0{margin-left: 0px;}
+
+    .p0-ipt {padding: 0px!important;}
+    .pT0-ipt{padding-top: 0px!important;}
+    .pR0-ipt{padding-right: 0px!important;}
+    .pB0-ipt{padding-bottom: 0px!important;}
+    .pL0-ipt{padding-left: 0px!important;}
+
+    .m0-ipt {margin: 0px!important;}
+    .mT0-ipt{margin-top: 0px!important;}
+    .mR0-ipt{margin-right: 0px!important;}
+    .mB0-ipt{margin-bottom: 0px!important;}
+    .mL0-ipt{margin-left: 0px!important;}
+
+    // LOOP  
+    .style_margin_padding (@index) when (@index > 0) {
+        // Padding
+        .p@{index} {padding: ~"@{index}px";}
+        .pT@{index} {padding-top: ~"@{index}px";}
+        .pR@{index} {padding-right: ~"@{index}px";}
+        .pB@{index} {padding-bottom: ~"@{index}px";}
+        .pL@{index} {padding-left: ~"@{index}px";}
+
+        // Padding Important
+        .p@{index}-ipt {padding: ~"@{index}px!important";}
+        .pT@{index}-ipt {padding-top: ~"@{index}px!important";}
+        .pR@{index}-ipt {padding-right: ~"@{index}px!important";}
+        .pB@{index}-ipt {padding-bottom: ~"@{index}px!important";}
+        .pL@{index}-ipt {padding-left: ~"@{index}px!important";}
+
+        // Padding Horizatial
+        .p-@{index}-h {padding: 0 ~"@{index}px";}
+        .p-@{index}-h-ipt {padding: 0 ~"@{index}px!important";}
+
+        // Padding Vertical
+        .p-@{index}-v {padding: ~"@{index}px" 0;}
+        .p-@{index}-v-ipt {padding: ~"@{index}px" 0!important;}
+        //-----------------------------------------------------------------
+        // Margin
+        .m@{index} {margin: ~"@{index}px";}
+        .mT@{index} {margin-top: ~"@{index}px";}
+        .mR@{index} {margin-right: ~"@{index}px";}
+        .mB@{index} {margin-bottom: ~"@{index}px";}
+        .mL@{index} {margin-left: ~"@{index}px";}
+
+        // Margin Important
+        .m@{index}-ipt {margin: ~"@{index}px!important";}
+        .mT@{index}-ipt {margin-top: ~"@{index}px!important";}
+        .mR@{index}-ipt {margin-right: ~"@{index}px!important";}
+        .mB@{index}-ipt {margin-bottom: ~"@{index}px!important";}
+        .mL@{index}-ipt {margin-left: ~"@{index}px!important";}
+
+        // margin Horizatial
+        .m-@{index}-h {margin: 0 ~"@{index}px";}
+        .m-@{index}-h-ipt {margin: 0 ~"@{index}px!important";}
+
+        // margin Vertical
+        .m-@{index}-v {margin: ~"@{index}px" 0;}
+        .m-@{index}-v-ipt {margin: ~"@{index}px" 0!important;}
+
+        // next iteration
+        .style_margin_padding(@index - 5);
+    }
+    // end the loop when index is 0
+    /*	.style_margin_padding (0) {}*/
+    // "call" the loopingClass the first time with highest value
+    .style_margin_padding (@iterations);
+}
+.marginAndPadding(150);
+
+
+
+.make-color-classes(@prefix, @list,@css) {
+    .iter(length(@list));
+    .iter(@i) when (@i > 0) {
+        .iter(@i - 1);
+        @pair:  extract(@list, @i); 
+        @key: extract(@pair, 1);
+        @value: extract(@pair, 2); 
+        .@{prefix}.@{key} {
+            @{css}: @value!important;  
+        }
+    }
+} 
+
+.make-color-before-classes(@prefix, @list,@css) {
+    .iter(length(@list));
+    .iter(@i) when (@i > 0) {
+        .iter(@i - 1);
+        @pair:  extract(@list, @i); 
+        @key: extract(@pair, 1);
+        @value: extract(@pair, 2); 
+        .@{prefix}.@{key} {
+
+            &:before{
+                @{css}: @value!important;  
+            }
+
+        }
+    }
+} 

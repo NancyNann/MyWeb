@@ -1,0 +1,176 @@
+
+/*timeline*/
+.block{
+    display: block;
+}
+i,[class^="icon-"],[class*=" icon-"]{
+    vertical-align: middle;
+}
+
+
+.timeline-holder{
+
+
+    margin:50px 0;
+    .relative;
+    &.left{
+        .timeline-bar{
+
+            left:12px;
+            top:0;
+        }
+        .timeline-item{
+
+            margin-left:50px;
+
+            &:before{
+                content:"";
+                .absolute;
+                left:-15px;
+                top:42px;
+                z-index: 10;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 10px 15px 10px 0;
+                border-color: transparent @black transparent transparent;
+
+            }
+
+            .icon-holder{
+                left:-55px;
+            }
+        }
+    }
+    &.right{
+        .timeline-bar{
+
+            right:12px;
+            top:0;
+        }
+        .timeline-item{
+
+
+            margin-right:53px;
+            &:before{
+                content:"";
+                .absolute;
+                right:-15px;
+                top:42px;
+                z-index: 10;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 10px 0 10px 15px  ;
+                border-color: transparent  transparent transparent @black;
+
+            }
+
+
+            .icon-holder{
+                right: -59px;
+            }
+        }
+    }
+
+
+    .timeline-bar{
+        .absolute;
+        background-color: @color1;
+        width:5px;
+        height:100%;
+        &:after,&:before{
+
+            font-size: 25px;
+            color: @color1;
+            .absolute;
+            content:@fa-var-ellipsis-v;
+            .fontawesome;
+        }
+        &:before{
+            top: -28px;
+
+        }
+        &:after{
+            bottom:-31px;
+
+        }
+    }
+
+    .timeline-item{
+        &.jshover{
+            border-color:@color1;
+            background-color: @black;
+            *,.info-box *{
+                color:@white;
+            }
+        }
+        margin-bottom:50px;
+        border: 5px solid @black;
+        background-color: @milky;
+        .relative;
+        .animate;
+        border-radius:0px;
+        padding:30px;
+
+        .icon-holder{
+            .absolute;
+
+            top: 37px;
+            width:30px;
+            height:30px;
+
+            background-color:@color1;
+            .inline;
+
+            i,[class^="icon-"],[class*=" icon-"]{
+                .center-absolute;
+                width: 100%;
+                height: 1em;
+                display: inline-block;
+                font-size: 1em;
+                text-align: center;
+                color:@white;
+            }
+        }
+
+        h3{
+            font-size: 1.5em;
+        }
+        h2,h3,h4,h5{
+            .bold;
+            .animate;
+            color:@black;
+        }
+        p{
+            .animate;
+            color:@dark;
+            margin: 5px 0 0;
+        }
+
+        .info-medium, .info-big{
+            .block;
+            margin: auto;
+            .uppercase;
+            text-align: center;
+            .bold800;
+            width:100%;
+            .animate;
+        }
+        .info-medium{
+            font-size: 0.9em;
+
+            color:@black;
+
+        }
+        .info-big{
+            font-size: 1.9em;
+            line-height: 1.2;
+            color:@black;
+
+        }
+
+    }
+
+
+}

@@ -1,0 +1,20 @@
+/*browsers hacks*/
+.ff header #caption,
+.ie header #caption {
+  display: inline-block;
+  height: 17em;
+}
+.ff #portfolio .portfolio-item .hover .hover-wrap,
+.ie #portfolio .portfolio-item .hover .hover-wrap {
+  display: inline-block;
+  height: 45%;
+}
+.safari {
+  /*    header #caption{
+            display: inline-block;
+            max-height: 70%;
+            height: auto;
+            opacity:1;
+        }*/
+}
+/*# sourceMappingURL=_browser-hacks.css.map */

@@ -1,0 +1,39 @@
+
+/*fun facts*/
+.bg-image{
+    &.parallax{
+        background-attachment: fixed;
+    }
+    &.no-height{
+        height: auto!important;
+    }
+}
+.left-cell,.right-cell{
+    .display-cell;
+    vertical-align: middle;
+}
+.fact-item{
+    margin: 1.5em 0;
+    display: table;
+    color:@white;
+    .left-cell{
+        text-align: center;
+        width: 50px;
+        padding-right: 1em;
+    }
+    p{
+        margin: 0;
+        line-height: 1;
+    }
+    h4{
+
+        font-size: 3em;
+        line-height: 1;
+        color:@white;
+        .bold;
+
+    }
+    span{
+        font-size: 4em;
+    }
+}

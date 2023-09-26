@@ -1,0 +1,141 @@
+
+
+// Default navbar naviagion
+@navbar-default-link-color:@dark;
+@navbar-default-bg:transparent;
+@navbar-default-border:transparent;
+@navbar-default-link-hover-color:@color1;
+@navbar-default-link-hover-bg:transparent;
+@navbar-default-link-active-color:@color1;
+@navbar-default-link-active-bg:@white;
+@navbar-default-toggle-border-color:transparent;
+@navbar-default-toggle-hover-bg:transparent;
+@navbar-default-toggle-icon-bar-bg:@color1;
+@navbar-default-toggle-hover-icon-bar-bg:@black;
+@navbar-default-border:@black;
+.navbar-default{
+    border: none;
+}
+.navbar-toggle {
+
+}
+.navbar-nav > li .dropdown-menu li a{
+    font-size:1em;
+
+}
+.dropdown-menu{
+    border-radius: 0;
+
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus{
+    background-color: @white;
+    color:@color1;
+
+}
+.navbar{
+    margin-bottom: 0;
+    min-height: auto; 
+
+}
+.navbar-nav > li.active > a, .navbar-nav > li:hover > a, .navbar-nav > li:focus > a{
+    /*    background-color: #eeeeee!important;*/
+}
+.navbar-nav { 
+    padding:0;
+    float: right;
+    > li.active,li.current-menu-item{
+        >    a{
+            color:@color1;
+            background-color: @white;
+        }
+
+    }
+    >li{
+        &.active,&.current-menu-parent,
+        &:hover,
+            &:focus {
+            > a{
+
+
+                color:@color1;
+                span{
+                    color:@color1;  
+                }
+                .svg-icon{
+                    path{
+                        fill:@color1;
+                    }
+                }
+            }
+        }
+    }
+
+    > li   > a {
+        text-transform: uppercase;
+        color:@black;
+        text-align: center;
+
+        .bold800;
+
+        padding: 30px 17px;
+        font-size: 1em;
+        letter-spacing: 1px;
+        line-height: 1.5;
+
+
+
+    }
+
+}
+
+.navbar-toggle {
+    .icon-bar {
+        background-color: @navbar-default-toggle-hover-icon-bar-bg;
+    }
+    &:hover,
+        &:focus {
+
+        .icon-bar {
+            background-color: @color1;
+        }
+    }
+
+}
+
+
+
+
+#nav-bar{
+    &.affix{
+        position: fixed;
+        top:0!important;
+        z-index: 500000;
+        width:100%;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+    }
+
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.4);
+    #logo{
+        float:left;
+        padding: 20px;
+        > a{
+
+            &,*{
+                .animate;
+                color:@black;   
+
+            }
+            &:hover{
+                &, *{
+                    color:@color1;
+                }
+
+            }
+
+
+        }
+    }
+}
+.navbar{
+    float:right;
+}

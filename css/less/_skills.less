@@ -1,0 +1,60 @@
+
+
+
+
+/*skills section*/
+
+#skills{
+
+}
+
+.skills-list{
+    list-style:none;
+    li{
+        margin-bottom:20px ;
+
+    }
+}
+.skill{
+    &.percent{
+        .percent{
+            color:@color1;
+            margin-right:10px;
+        }
+        label{
+            color:@black;
+            .uppercase;
+        }
+        .bar-wrap{
+            background:@gray-light;
+            height:5px;
+            width:100%;
+            .bar{
+                width:0;
+                height:5px;
+                background:@color1;
+            }
+        }
+    }
+
+    &.star {
+
+        label{
+            .uppercase;    
+
+        }
+        .fa{
+            font-size: 1.5em;;
+            margin-right: 3px;
+
+        }
+        .fa-star{
+            color:@color1;  
+        }
+        span{
+
+        }
+
+    }
+}
+
