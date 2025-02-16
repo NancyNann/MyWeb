@@ -11967,6 +11967,9 @@ you can use the generic selector below, but it's slower:
 .fa-dribbble:before {
   content: "\f17d";
 }
+.fa-black-tie:before {
+  content: "\f27e";
+}
 .fa-skype:before {
   content: "\f17e";
 }
@@ -16836,7 +16839,7 @@ strong {
 }
 .title-marked {
   color: #fff;
-  background: #000000;
+  background: #252525;
   padding: 5px 10px ;
   text-transform: uppercase;
   display: inline-block;
@@ -17252,7 +17255,7 @@ i,
 .timeline-holder.right .timeline-item .icon-holder {
   right: -59px;
 }
-.timeline-holder .timeline-bar {
+.timeline-holder .timeline-bar{
   position: absolute;
   background-color: #E3007C;
   width: 5px;
@@ -18254,7 +18257,7 @@ footer .social-icons li a {
   color: #fff;
 }
 footer #footer-logo {
-  background: #000000;
+  background: #252525;
   display: inline-block;
   padding: 10px 20px;
 }

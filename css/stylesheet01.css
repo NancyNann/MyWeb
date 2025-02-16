@@ -16836,7 +16836,7 @@ strong {
 }
 .title-marked {
   color: #fff;
-  background: #000000;
+  background: #252525;
   padding: 5px 10px ;
   text-transform: uppercase;
   display: inline-block;
@@ -17057,7 +17057,7 @@ header #nav-bar {
   background: #fff;
 }
 header #nav-bar.go-show {
-  animation: slideInDown 500ms forwards;
+  animation: slideInDown 5000s forwards;
 }
 header #nav-bar.go-hide {
   position: fixed;
@@ -17066,7 +17066,7 @@ header #nav-bar.go-hide {
   top: 0;
   width: 100%;
   background-color: #fff;
-  animation: slideOutUp 500ms forwards;
+  animation: slideOutUp 5000s forwards;
 }
 header .video-bg {
   height: 100vh;
@@ -17081,7 +17081,7 @@ header:before {
 }
 header #caption {
   opacity: 0;
-  animation: showInit 2s 500ms cubic-bezier(0.82, -0.105, 0.265, 1.55) forwards;
+  animation: showInit 2s 5000s cubic-bezier(0.82, -0.105, 0.265, 1.55) forwards;
   display: table;
   z-index: 100;
   position: absolute;
@@ -18254,7 +18254,7 @@ footer .social-icons li a {
   color: #fff;
 }
 footer #footer-logo {
-  background: #000000;
+  background: #252525;
   display: inline-block;
   padding: 10px 20px;
 }
